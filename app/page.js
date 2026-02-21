@@ -30,15 +30,15 @@ const page = () => {
         <div
           id="box2"
           className="size-10 bg-cyan-700 rounded-full text-center "
-        ></div>{" "}
+        ></div>
         <div
           id="box3"
           className="size-10 bg-cyan-700 rounded-full text-center "
-        ></div>{" "}
+        ></div>
         <div
           id="box4"
           className="size-10 bg-cyan-700 rounded-full text-center "
-        ></div>{" "}
+        ></div>
         <div
           id="box5"
           className="size-10 bg-cyan-700 rounded-full text-center "
