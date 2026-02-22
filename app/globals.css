@@ -26,3 +26,22 @@ body {
 *::-webkit-scrollbar {
   display: none;
 }
+
+@layer utilities {
+  .justify-between {
+    @apply flex justify-between;
+  }
+  .justify-evenly {
+    @apply flex items-center justify-evenly;
+  }
+
+  .justify-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .abs-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+}

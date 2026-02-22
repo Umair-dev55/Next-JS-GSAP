@@ -4,18 +4,35 @@ import gsap from "gsap";
 const page = () => {
   useEffect(() => {
     var tl = gsap.timeline();
-    tl.from(".card1", {
+    tl.from("#card1", {
       x: 1200,
       duration: 1,
     });
-    tl.from(".card2", {
+    tl.from("#card2", {
       duration: 1,
       x: 1200,
     });
 
-    tl.from(".card3", {
+    tl.from("#card3", {
       duration: 1,
       x: 1200,
+    });
+    var timeline = gsap.timeline();
+    timeline.from(".logo", {
+      y: -40,
+      delay: 0.5,
+      duration: 0.2,
+      opacity: 0,
+    });
+    timeline.from("#nav", {
+      opacity: 0,
+      y: -40,
+      duration: 0.5,
+    });
+    timeline.from("#hero", {
+      opacity: 0,
+      x: -40,
+      duration: 0.5,
     });
 
     // gsap.to("h1", {
@@ -32,29 +49,46 @@ const page = () => {
     // });
   });
   return (
-    <div className="h-full p-10">
-      <section className="">
-        {/* Timeline  */}
-        <div className=" p-10  ">
-          <div className="card1 p-2 bg-gray-800 size-30">One</div>
-          <div className="card2 p-2 bg-gray-700 size-30">Two</div>
-          <div className="card3 p-2 bg-gray-700 size-30">Three</div>
+    <div className="">
+      {/* Nav Here  */}
+      <nav className="justify-between bg-black/40 p-10 text-[16px]">
+        <h3 className="logo">Umair</h3>
+        <div className=" flex gap-10">
+          <a id="nav" href="#">
+            Home
+          </a>
+          <a id="nav" href="#">
+            Products
+          </a>
+          <a id="nav" href="#">
+            Services
+          </a>
+          <a id="nav" href="#">
+            About
+          </a>
+          <a id="nav" href="#">
+            Contact
+          </a>
         </div>
-        {/* To & From  */}
-        <div
-          id="box"
-          className="w-100 border -2 border-gray-700  text-center"
-        ></div>
-        <div>
-          <div id="para" className="text-2xl py-20 ">
-            <h1>lorem lorem lorem lorem lorem lorem</h1>
-            <h1>lorem lorem lorem lorem lorem lorem</h1>
-            <h1>lorem lorem lorem lorem lorem lorem</h1>
-            <h1>lorem lorem lorem lorem lorem lorem</h1>
-            <h1>lorem lorem lorem lorem lorem lorem</h1>
+      </nav>
+      <div className="h-screen">
+        <h1 id="hero" className="text-2xl abs-center">
+          Coding ERA
+        </h1>
+      </div>
+      <div className="relative p-10  ">
+        <div className="*:m-5 sm:flex sm:justify-center">
+          <div id="card1" className="bg-black size-70 rounded-2xl ">
+            Card
+          </div>
+          <div id="card2" className="bg-black size-70 rounded-2xl ">
+            Card
+          </div>
+          <div id="card3" className="bg-black size-70 rounded-2xl ">
+            Card
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
