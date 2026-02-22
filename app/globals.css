@@ -34,7 +34,6 @@ body {
   .justify-evenly {
     @apply flex items-center justify-evenly;
   }
-
   .justify-center {
     @apply flex items-center justify-center;
   }
