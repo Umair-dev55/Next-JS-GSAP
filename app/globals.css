@@ -34,13 +34,15 @@ body {
   .justify-evenly {
     @apply flex items-center justify-evenly;
   }
-  .justify-center {
-    @apply flex items-center justify-center;
-  }
   .flex-center {
-    @apply flex justify-center items-center;
+    @apply flex items-center justify-center;
   }
   .abs-center {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+}
+@layer components {
+  .box {
+    @apply size-50 bg-red-600;
   }
 }

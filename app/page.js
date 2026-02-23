@@ -1,6 +1,4 @@
-
 const page = () => {
- 
   return (
     <div className="">
       {/* hero section  */}

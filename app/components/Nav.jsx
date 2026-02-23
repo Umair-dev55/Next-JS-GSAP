@@ -34,20 +34,20 @@ const Nav = () => {
     });
     timeline.from("#hero", {
       opacity: 0,
-      x: -40,
+      x: -400,
       duration: 0.5,
     });
   });
   return (
     <div>
-      <nav className="justify-between bg-black/40 p-10 text-[16px]">
+      <nav className="justify-between bg-black/40 p-10 text-[16px] capitalize">
         <h3 className="logo">Umair</h3>
         <div className=" flex gap-10">
           <Link className="nav-link" href="/">
             home
           </Link>
-          <Link className="nav-link" href="/product">
-            Product
+          <Link className="nav-link" href="/scrolltrigger">
+            scrolltrigger
           </Link>
           <Link className="nav-link" href="/contact">
             contact
