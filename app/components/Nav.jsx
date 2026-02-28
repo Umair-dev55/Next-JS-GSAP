@@ -40,7 +40,7 @@ const Nav = () => {
   });
   return (
     <div>
-      <nav className="justify-between bg-black/40 p-10 text-[16px] capitalize">
+      <nav className="justify-between bg-black p-10 text-[16px] capitalize">
         <h3 className="logo">Umair</h3>
         <div className=" flex gap-10">
           <Link className="nav-link" href="/">
@@ -49,8 +49,8 @@ const Nav = () => {
           <Link className="nav-link" href="/scrolltrigger">
             scrolltrigger
           </Link>
-          <Link className="nav-link" href="/contact">
-            contact
+          <Link className="nav-link" href="/textTrigger">
+            textTrigger
           </Link>
           <Link className="nav-link" href="/about">
             About

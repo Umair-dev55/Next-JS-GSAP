@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -43,6 +48,14 @@ body {
 }
 @layer components {
   .box {
-    @apply size-50 bg-red-600;
+    @apply size-50 bg-black rounded-2xl shadow-2xl;
   }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  overflow-x: hidden;
+}
+#parent #child{
 }
