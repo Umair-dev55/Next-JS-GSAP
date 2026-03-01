@@ -1,38 +1,48 @@
 "use client";
-import React, { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import React, { useRef, useEffect, useState } from "react";
+import gsap from "gsap";
 
-const page = () => {
+const Page = () => {
+  const parent = useRef(null);
+  const [y, setY] = useState(250);
+
+  const mouseMove = (e) => {
+    setY(e.nativeEvent.clientY);
+  };
+
   useEffect(() => {
-    gsap.to("#parent #child", {
-      transform: "translateX(-80%)",
-      scrollTrigger: {
-        trigger: "#parent ",
-        scroller: "body",
-        markers: true,
-        scrub: 1,
-        pin: true,
-        start: "top 0%",
-        end: "top -100%",
-      },
-    });
-  });
+    const ctx = gsap.context(() => {
+      gsap.from(parent.current, {
+        opacity: 0,
+        y: 100,
+        duration: 2,
+        ease: "power3.out",
+      });
+    }, parent);
+
+    return () => ctx.revert(); // cleanup (important in Next.js)
+  }, []);
+
   return (
-    <div>
-      <div className="h-screen">1</div>
+    <div
+      ref={parent}
+      className="w-screen h-[400px] bg-black relative overflow-hidden"
+    >
       <div
-        id="parent"
-        className="p-5 sm:h-screen w-screen bg-amber-700 flex items-center"
+        id="string"
+        className="absolute left-1/2 -translate-x-1/2"
+        onMouseMove={mouseMove}
       >
-        <h1 id="child" className="p-20 text-[50vw] font-extrabold">
-          EXPERIENCE
-        </h1>
+        <svg width="1000" height="600">
+          <path
+            d={`M 10 250 Q 500 ${y} 990 250`}
+            stroke="white"
+            fill="transparent"
+          />
+        </svg>
       </div>
-      <div className="h-screen">3</div>
     </div>
   );
 };
 
-export default page;
+export default Page;

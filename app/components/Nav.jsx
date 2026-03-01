@@ -55,6 +55,9 @@ const Nav = () => {
           <Link className="nav-link" href="/about">
             About
           </Link>
+          <Link className="nav-link" href="/advancetrigger">
+            advancetrigger
+          </Link>
         </div>
       </nav>
     </div>
